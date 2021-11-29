@@ -9,7 +9,7 @@ package modelos;
  *
  * @author
  */
-public class DataPaciente extends modelos.Antecedentes{
+public class DataPaciente{
     
     private String apellidos;
     private String id;
