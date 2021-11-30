@@ -1,4 +1,4 @@
-//conexion a base de datos
+//conexion a base de datos :D
 package dao;
 
 import java.sql.Connection;
