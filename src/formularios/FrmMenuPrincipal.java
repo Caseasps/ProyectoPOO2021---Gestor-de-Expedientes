@@ -21,6 +21,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
      */
     public FrmMenuPrincipal() {
         initComponents();
+        this.ActualizarCredencialesFrm();
     }
 
     /**
@@ -37,8 +38,8 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         BtnAjustes = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        LblMedicoNombreApellido = new javax.swing.JLabel();
+        LblEspecialidad = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TblPacientesGuardados = new javax.swing.JTable();
@@ -93,12 +94,12 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/formularios/img/doctor.png"))); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel2.setText("Medico");
+        LblMedicoNombreApellido.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        LblMedicoNombreApellido.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        LblMedicoNombreApellido.setText("Medico");
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setText("Especialidad");
+        LblEspecialidad.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        LblEspecialidad.setText("Especialidad");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -107,8 +108,8 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(LblEspecialidad, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(LblMedicoNombreApellido, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addContainerGap())
@@ -119,9 +120,9 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addComponent(LblMedicoNombreApellido)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3))
+                        .addComponent(LblEspecialidad))
                     .addComponent(jLabel1))
                 .addGap(31, 31, 31))
         );
@@ -231,7 +232,14 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private void ActualizarCredencialesFrm(){
+        String[] data = new String[3];
+        data = dmg.mostrarRegistroMedico();
+        this.LblMedicoNombreApellido.setText(data[0]+" "+data[2]);
+        this.LblEspecialidad.setText(data[3]);
+    }
+    
     private void BtnNuevoExpedienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNuevoExpedienteActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnNuevoExpedienteActionPerformed
@@ -308,11 +316,11 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton BtnAjustes;
     private javax.swing.JButton BtnBuscarExpediente;
     private javax.swing.JButton BtnNuevoExpediente;
+    private javax.swing.JLabel LblEspecialidad;
+    private javax.swing.JLabel LblMedicoNombreApellido;
     private javax.swing.JTable TblPacientesGuardados;
     private javax.swing.JTextField TfIdBuscar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

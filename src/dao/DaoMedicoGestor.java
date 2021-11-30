@@ -10,12 +10,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelos.Antecedentes;
 import modelos.DataPaciente;
+import modelos.Medico;
 
 /**
  *
@@ -68,6 +70,8 @@ public class DaoMedicoGestor{
         listaDataPaciente = this.listarRegistrosData();
         listaAntPaciente = this.listarRegistrosAnt();
         mostrarDatosMedico = this.mostrarRegistroMedico();
+        Medico m = new Medico();
+        this.listarRegistrosMedico(m);
     }
     
     public ArrayList<DataPaciente> getListaDataPaciente(){
@@ -343,6 +347,28 @@ public class DaoMedicoGestor{
             }
         }
         return listado;
+    }
+    
+    public void listarRegistrosMedico(Medico m){
+
+        ResultSet rs = null;
+        try{
+            rs = verPacientes.executeQuery();
+            m.setApellido(rs.getString("apellido"));
+            m.setEspecialidad(rs.getString("especialidad"));
+            m.setNombre(rs.getString("nombre"));
+            m.setUsuario(rs.getString("usuario"));
+            m.setPw(rs.getString("pw"));
+
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }finally{ 
+            try{
+                rs.close();
+            }catch(SQLException ex){
+                conexion.close(conn);
+            }
+        }
     }
     
     public String[] mostrarRegistroMedico(){
