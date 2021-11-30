@@ -52,6 +52,7 @@ public class DaoLogin {
                 conexion.close(conn);
             }
         }
+        //Comit
         return PW;
     }
     
