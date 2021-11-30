@@ -21,19 +21,15 @@ public class DaoMedicoSettings {
     
     private Connection conn ;
     private final Conexion conexion = new Conexion();
-    private PreparedStatement editarDatosPersonales;
-    private PreparedStatement editarCredenciales;
+    private PreparedStatement editarDatosyCreds;
     
     public DaoMedicoSettings() {
         try {
             conn = conexion.obtenerConexion();
-            editarDatosPersonales = conn.prepareStatement("Update MedicoLogin "
-                    + "set nombre = ?, apellido = ?, especialidad = ? "
+            editarDatosyCreds = conn.prepareStatement("Update MedicoLogin "
+                    + "set nombre = ?, apellido = ?, especialidad = ?, "
+                    + "usuario = ?, pw = ? "
                     + "where id = 1"); 
-            
-            editarCredenciales = conn.prepareStatement("Update MedicoLogin "
-                    + "set usuario = ?, pw = ? "
-                    + "where id = 1");
 
         } catch (SQLException ex) {
             Logger.getLogger(DaoMedicoSettings.class.getName()).log(Level.SEVERE, null, ex);
@@ -68,10 +64,12 @@ public class DaoMedicoSettings {
     public int modificarDatosMBD(Medico m){
         int r = 0;
         try{
-            editarDatosPersonales.setString(1, m.getNombre());
-            editarDatosPersonales.setString(2, m.getApellido());
-            editarDatosPersonales.setString(3, m.getEspecialidad());
-            r = editarDatosPersonales.executeUpdate();
+            editarDatosyCreds.setString(1, m.getNombre());
+            editarDatosyCreds.setString(2, m.getApellido());
+            editarDatosyCreds.setString(3, m.getEspecialidad());
+            editarDatosyCreds.setString(4, m.getUsuario());
+            editarDatosyCreds.setString(5, m.getPw());
+            r = editarDatosyCreds.executeUpdate();
         }catch(SQLException ex ){
             JOptionPane.showMessageDialog(null, ex.getMessage(), "Error al modificar en BD", 
                     JOptionPane.ERROR_MESSAGE);
@@ -79,20 +77,6 @@ public class DaoMedicoSettings {
         }
         return r;
                 
-    }
-    
-    public int modificarCredsMBD(Medico m){
-        int r = 0;
-        try{
-            editarCredenciales.setString(1, m.getUsuario());
-            editarCredenciales.setString(2, m.getPw());
-            r = editarCredenciales.executeUpdate();
-        }catch(SQLException ex ){
-            JOptionPane.showMessageDialog(null, ex.getMessage(), "Error al modificar en BD", 
-                    JOptionPane.ERROR_MESSAGE);
-            conexion.close(conn);
-        }
-        return r;          
     }
     
     public String actualizarDataBD(Medico m){
@@ -112,22 +96,5 @@ public class DaoMedicoSettings {
         
         return msn;
     }
-    
-    public String actualizarCredsBD(Medico m){
 
-        String msn ="Datos actualizados exitosamente";
-        String msnError = "Error. ";
-        
-        if (this.modificarCredsMBD(m) != 0){
-            return msn;
-        }else{
-            msnError += "Error al modifcar datos";
-        }
-
-        if(!msnError.equals("Error. ")){
-            msn += "\n" + msnError;
-        }
-        
-        return msn;
-    }
 }

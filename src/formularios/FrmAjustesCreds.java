@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package formularioss;
+package formularios;
+
+import dao.DaoMedicoSettings;
+import modelos.Medico;
 
 /**
  *
  * @author benja
  */
 public class FrmAjustesCreds extends javax.swing.JFrame {
-
+    private DaoMedicoSettings d = new DaoMedicoSettings();
     /**
      * Creates new form ajusteCreds
      */
@@ -42,6 +45,11 @@ public class FrmAjustesCreds extends javax.swing.JFrame {
 
         BtnCancelar.setFont(BtnCancelar.getFont());
         BtnCancelar.setText("Cancelar");
+        BtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCancelarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(jLabel1.getFont().deriveFont(jLabel1.getFont().getSize()+2f));
         jLabel1.setText("Nuevo Usuario:");
@@ -51,6 +59,11 @@ public class FrmAjustesCreds extends javax.swing.JFrame {
 
         BtnGuardar.setFont(BtnGuardar.getFont());
         BtnGuardar.setText("Guardar");
+        BtnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGuardarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -110,6 +123,20 @@ public class FrmAjustesCreds extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
+        
+        Medico m = new Medico();
+        d.editarCredMedico(this.TfNuevUsuario.getText(), 
+                this.TfContraceña.getText(), m);
+        d.actualizarDataBD(m);
+        this.dispose();
+    }//GEN-LAST:event_BtnGuardarActionPerformed
+
+    private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_BtnCancelarActionPerformed
 
     /**
      * @param args the command line arguments

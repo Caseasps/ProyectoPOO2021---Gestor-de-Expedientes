@@ -5,9 +5,6 @@
  */
 package formularios;
 
-import formularioss.FrmAjustesCreds;
-import formularioss.FrmAjustesDatosMed;
-
 /**
  *
  * @author benja
