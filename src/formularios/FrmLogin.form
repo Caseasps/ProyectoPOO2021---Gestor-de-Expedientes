@@ -156,6 +156,9 @@
           </Events>
         </Component>
         <Component class="javax.swing.JPasswordField" name="PfPw">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PfPwActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>

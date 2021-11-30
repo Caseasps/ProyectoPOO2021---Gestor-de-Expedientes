@@ -87,6 +87,7 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Expediente");
+        setPreferredSize(new java.awt.Dimension(560, 665));
         setResizable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Datos Generales", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
@@ -220,11 +221,12 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(LblEscolaridad))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LblSexo)
-                    .addComponent(jLabel10)
-                    .addComponent(LblOficio))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel11)
+                        .addComponent(jLabel10)
+                        .addComponent(LblOficio)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -405,7 +407,7 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -455,7 +457,7 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
         });
     }
     
-    public void MostrarExpediente (String ID){
+    public Boolean MostrarExpediente (String ID){
         String[] datos = new String[23];
         datos = dmg.buscarPaciente(ID);
         LblId.setText(datos[0]);
@@ -481,6 +483,11 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
         TpHospitalizaciones.setText(datos[20]);
         TpEnfContag.setText(datos[21]);
         TpEnfHereditaria.setText(datos[22]);
+        
+        if (datos[0] == null)
+            return false;
+        
+        return true;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LblAlimentacion;

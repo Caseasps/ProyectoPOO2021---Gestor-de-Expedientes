@@ -37,9 +37,9 @@ public class DaoMedicoGestor{
     public DaoMedicoGestor() {
         try {
             conn = conexion.obtenerConexion();
-            verPacientes = conn.prepareStatement("Select * from Paciente");
+            verPacientes = conn.prepareStatement("Select * from ExpedientePaciente");
             
-            insertarPaciente = conn.prepareStatement("Insert Into Paciente"
+            insertarPaciente = conn.prepareStatement("Insert Into ExpedientePaciente"
                     + "(id, nombres, apellidos, direccion, edad, "
                     + "escolaridad, fechaNac, grupoEtnico, nombreMadre, "
                     + "nombrePadre, oficio, sexo, alimentacion, consumo, "
@@ -49,7 +49,7 @@ public class DaoMedicoGestor{
                     + "Values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
                     + "?, ?, ?, ?, ?, ?, ?, ?)"); 
             
-            editarPaciente = conn.prepareStatement("Update Paciente "
+            editarPaciente = conn.prepareStatement("Update ExpedientePaciente "
                     + "set nombres = ?, apellidos = ?, direccion = ?,  edad = ?, "
                     + "escolaridad = ?, fechaNac = ?,  grupoEtnico = ?, "
                     + "nombreMadre = ?, nombrePadre  = ?, oficio = ?, sexo = ?,  "
@@ -379,6 +379,17 @@ public class DaoMedicoGestor{
                 datos[2] = p.getApellidos();
                 tbl.addRow(datos);
             }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return tbl;
+    }
+    
+    public DefaultTableModel getTablaPacientesHeaders(){
+        DefaultTableModel tbl = new DefaultTableModel();
+        try{
+            String titulo[] = {"ID", "", "Nombre(s)", "Apellido(s)"};
+            tbl.setColumnIdentifiers(titulo);
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }

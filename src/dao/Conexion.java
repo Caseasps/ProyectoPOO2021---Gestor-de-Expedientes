@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 public class Conexion {
     private static final String SERVIDOR = "localhost";
     private static final String USUARIO = "sa";
-    private static final String PW = "123";
+    private static final String PW = "1234";
     private static final String NOMBREBD = "ExpedientesMedicos";
     private static final String PUERTO = "1433";
     private static final String DRIVER = "com.microsoft.sqlserver.jdbc.SQLServerDriver";

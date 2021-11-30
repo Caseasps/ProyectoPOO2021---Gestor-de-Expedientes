@@ -6,6 +6,7 @@
 package formularios;
 
 import dao.DaoMedicoGestor;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -14,11 +15,11 @@ import dao.DaoMedicoGestor;
 public class FrmMenuPrincipal extends javax.swing.JFrame {
     private DaoMedicoGestor dmg = new DaoMedicoGestor();
     private FrmMostrarExpediente frmE = new FrmMostrarExpediente();
+    private FrmMenuAjustes frmA = new FrmMenuAjustes();
     /**
      * Creates new form MenuPrincipal
      */
     public FrmMenuPrincipal() {
-        this.TblPacientesGuardados.setModel(dmg.getTablaPacientes());
         initComponents();
     }
 
@@ -33,7 +34,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         BtnNuevoExpediente = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        BtnAjustes = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -58,7 +59,12 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Ajustes");
+        BtnAjustes.setText("Ajustes");
+        BtnAjustes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnAjustesActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -70,7 +76,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
                 .addContainerGap(12, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtnAjustes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -79,7 +85,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addComponent(BtnNuevoExpediente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(BtnAjustes)
                 .addGap(15, 15, 15))
         );
 
@@ -124,16 +130,29 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
         TblPacientesGuardados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {},
-                {},
-                {},
-                {}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-
+                "ID", "Nombres", "Apellidos"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(TblPacientesGuardados);
+        if (TblPacientesGuardados.getColumnModel().getColumnCount() > 0) {
+            TblPacientesGuardados.getColumnModel().getColumn(0).setResizable(false);
+            TblPacientesGuardados.getColumnModel().getColumn(1).setResizable(false);
+            TblPacientesGuardados.getColumnModel().getColumn(2).setResizable(false);
+        }
 
         TfIdBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,17 +238,34 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
     private void BtnBuscarExpedienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarExpedienteActionPerformed
         // TODO add your handling code here:
-        frmE.MostrarExpediente(this.TfIdBuscar.getText());
-        frmE.setVisible(true);
+        if (frmE.MostrarExpediente(this.TfIdBuscar.getText())){
+            frmE.setVisible(true);
+        }
+        else {
+            JOptionPane.showMessageDialog(this, "El expediente no existe"
+                    , "Expediente", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_BtnBuscarExpedienteActionPerformed
 
     private void BtnActualizarTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnActualizarTablaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_BtnActualizarTablaActionPerformed
 
     private void TfIdBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfIdBuscarActionPerformed
         // TODO add your handling code here:
+        if (frmE.MostrarExpediente(this.TfIdBuscar.getText())){
+            frmE.setVisible(true);
+        }
+        else {
+            JOptionPane.showMessageDialog(this, "El expediente no existe"
+                    , "Expediente", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_TfIdBuscarActionPerformed
+
+    private void BtnAjustesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAjustesActionPerformed
+        // TODO add your handling code here:
+        frmA.setVisible(true);
+    }//GEN-LAST:event_BtnAjustesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,11 +305,11 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnActualizarTabla;
+    private javax.swing.JButton BtnAjustes;
     private javax.swing.JButton BtnBuscarExpediente;
     private javax.swing.JButton BtnNuevoExpediente;
     private javax.swing.JTable TblPacientesGuardados;
     private javax.swing.JTextField TfIdBuscar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

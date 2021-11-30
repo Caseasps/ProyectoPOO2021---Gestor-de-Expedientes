@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -25,7 +26,7 @@ public class DaoLogin {
     public DaoLogin() {
         try {
             conn = conexion.obtenerConexion();
-            verCredenciales = conn.prepareStatement("Select pw from Expedientes where usuario = ?");
+            verCredenciales = conn.prepareStatement("Select pw from MedicoLogin where usuario = ?");
         } catch (SQLException ex) {
             Logger.getLogger(DaoLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -45,8 +46,12 @@ public class DaoLogin {
             }
             if (pw.equals(pwBD)){
                 return true;
-            }            
-            
+            }
+            else{
+            JOptionPane.showMessageDialog(null, "Credenciales incorrectas."
+                    + "\n Intente nuevamente"
+                    , "Login", JOptionPane.WARNING_MESSAGE);
+        }
         }catch(SQLException ex){
             ex.printStackTrace();
         }finally{

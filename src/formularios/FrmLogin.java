@@ -66,6 +66,12 @@ public class FrmLogin extends javax.swing.JFrame {
             }
         });
 
+        PfPw.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PfPwActionPerformed(evt);
+            }
+        });
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/formularios/img/login.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -143,7 +149,7 @@ public class FrmLogin extends javax.swing.JFrame {
             TfUsuario.requestFocus();
             return ;
         }
-        if(PfPw.getPassword().equals("")){
+        if(String.valueOf(PfPw.getPassword()).equals("")){
             JOptionPane.showMessageDialog(this, "Ingrese una contraseña"
                     , "Login", JOptionPane.WARNING_MESSAGE);
             PfPw.requestFocus();
@@ -152,9 +158,29 @@ public class FrmLogin extends javax.swing.JFrame {
         if(login.verificarCredenciales(this.TfUsuario.getText(), 
                 String.valueOf(this.PfPw.getPassword()))){
             frm.setVisible(true);
-
+            this.dispose();
         }
     }//GEN-LAST:event_BtnIngresarActionPerformed
+
+    private void PfPwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PfPwActionPerformed
+        if(TfUsuario.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Ingrese su nombre de usuario"
+                    , "Login", JOptionPane.WARNING_MESSAGE);
+            TfUsuario.requestFocus();
+            return ;
+        }
+        if(String.valueOf(PfPw.getPassword()).equals("")){
+            JOptionPane.showMessageDialog(this, "Ingrese una contraseña"
+                    , "Login", JOptionPane.WARNING_MESSAGE);
+            PfPw.requestFocus();
+            return;
+        }
+        if(login.verificarCredenciales(this.TfUsuario.getText(), 
+                String.valueOf(this.PfPw.getPassword()))){
+            frm.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_PfPwActionPerformed
 
     /**
      * @param args the command line arguments

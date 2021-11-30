@@ -136,7 +136,7 @@
                 <Font component="jLabel2" property="font" relativeSize="true" size="2"/>
               </FontInfo>
             </Property>
-            <Property name="text" type="java.lang.String" value="Contrace&#xf1;a:"/>
+            <Property name="text" type="java.lang.String" value="Contrase&#xf1;a:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="BtnGuardar">

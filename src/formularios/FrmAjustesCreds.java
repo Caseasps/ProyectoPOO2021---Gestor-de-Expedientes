@@ -47,7 +47,7 @@ public class FrmAjustesCreds extends javax.swing.JFrame {
         jLabel1.setText("Nuevo Usuario:");
 
         jLabel2.setFont(jLabel2.getFont().deriveFont(jLabel2.getFont().getSize()+2f));
-        jLabel2.setText("Contraceña:");
+        jLabel2.setText("Contraseña:");
 
         BtnGuardar.setFont(BtnGuardar.getFont());
         BtnGuardar.setText("Guardar");

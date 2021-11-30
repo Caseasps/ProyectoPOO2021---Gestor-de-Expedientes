@@ -3,14 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package formularioss;
+package formularios;
+
+import formularioss.FrmAjustesCreds;
+import formularioss.FrmAjustesDatosMed;
 
 /**
  *
  * @author benja
  */
 public class FrmMenuAjustes extends javax.swing.JFrame {
-
+    FrmAjustesDatosMed frm1 = new FrmAjustesDatosMed();
+    FrmAjustesCreds frm2 = new FrmAjustesCreds();
     /**
      * Creates new form Ajustes
      */
@@ -46,8 +50,18 @@ public class FrmMenuAjustes extends javax.swing.JFrame {
         });
 
         BtnEditCred.setText("Editar Credenciales");
+        BtnEditCred.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEditCredActionPerformed(evt);
+            }
+        });
 
         BtnCancelar.setText("Cancelar");
+        BtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -100,7 +114,18 @@ public class FrmMenuAjustes extends javax.swing.JFrame {
 
     private void BtnEditDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEditDataActionPerformed
         // TODO add your handling code here:
+        frm1.setVisible(true);
     }//GEN-LAST:event_BtnEditDataActionPerformed
+
+    private void BtnEditCredActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEditCredActionPerformed
+        // TODO add your handling code here:
+        frm2.setVisible(true);
+    }//GEN-LAST:event_BtnEditCredActionPerformed
+
+    private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_BtnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
