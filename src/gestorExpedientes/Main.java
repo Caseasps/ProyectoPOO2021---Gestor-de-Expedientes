@@ -5,7 +5,7 @@
  */
 package gestorExpedientes;
 
-import formularios.FrmMenuPrincipal;
+import formularios.FrmLogin;
 
 /**
  *
@@ -18,7 +18,7 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        FrmMenuPrincipal frm = new FrmMenuPrincipal();
+        FrmLogin frm = new FrmLogin();
         frm.setVisible(true);
         frm.setLocationRelativeTo(null);
     }
