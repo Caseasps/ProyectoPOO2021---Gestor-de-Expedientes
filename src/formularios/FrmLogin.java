@@ -5,12 +5,16 @@
  */
 package formularios;
 
+import dao.DaoLogin;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author benja
  */
 public class FrmLogin extends javax.swing.JFrame {
-
+    private DaoLogin login = new DaoLogin();
+    private FrmMenuPrincipal frm = new FrmMenuPrincipal();
     /**
      * Creates new form login
      */
@@ -28,33 +32,33 @@ public class FrmLogin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        Tfusuario = new javax.swing.JTextField();
+        TfUsuario = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         BtnIngresar = new javax.swing.JToggleButton();
-        PfContraceña = new javax.swing.JPasswordField();
+        PfPw = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestor de Expedientes - Login");
         setResizable(false);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Login", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Bahnschrift", 0, 14))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Login", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
         jPanel1.setForeground(new java.awt.Color(240, 240, 240));
 
-        Tfusuario.addActionListener(new java.awt.event.ActionListener() {
+        TfUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TfusuarioActionPerformed(evt);
+                TfUsuarioActionPerformed(evt);
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        jLabel3.setFont(jLabel3.getFont().deriveFont(jLabel3.getFont().getSize()+2f));
         jLabel3.setText("Usuario:");
 
-        jLabel5.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        jLabel5.setText("Contraceña:");
+        jLabel5.setFont(jLabel5.getFont().deriveFont(jLabel5.getFont().getSize()+2f));
+        jLabel5.setText("Contraseña:");
 
-        BtnIngresar.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        BtnIngresar.setFont(BtnIngresar.getFont());
         BtnIngresar.setText("Ingresar");
         BtnIngresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,18 +73,17 @@ public class FrmLogin extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
-                        .addComponent(PfContraceña, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(PfPw, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
-                        .addComponent(Tfusuario, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                        .addComponent(TfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(31, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,10 +102,10 @@ public class FrmLogin extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Tfusuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PfContraceña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PfPw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addGap(18, 18, 18)
                 .addComponent(BtnIngresar)
@@ -129,12 +132,28 @@ public class FrmLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void TfusuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfusuarioActionPerformed
+    private void TfUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfUsuarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TfusuarioActionPerformed
+    }//GEN-LAST:event_TfUsuarioActionPerformed
 
     private void BtnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIngresarActionPerformed
-        // TODO add your handling code here:
+        if(TfUsuario.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Ingrese su nombre de usuario"
+                    , "Login", JOptionPane.WARNING_MESSAGE);
+            TfUsuario.requestFocus();
+            return ;
+        }
+        if(PfPw.getPassword().equals("")){
+            JOptionPane.showMessageDialog(this, "Ingrese una contraseña"
+                    , "Login", JOptionPane.WARNING_MESSAGE);
+            PfPw.requestFocus();
+            return;
+        }
+        if(login.verificarCredenciales(this.TfUsuario.getText(), 
+                String.valueOf(this.PfPw.getPassword()))){
+            frm.setVisible(true);
+
+        }
     }//GEN-LAST:event_BtnIngresarActionPerformed
 
     /**
@@ -174,8 +193,8 @@ public class FrmLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton BtnIngresar;
-    private javax.swing.JPasswordField PfContraceña;
-    private javax.swing.JTextField Tfusuario;
+    private javax.swing.JPasswordField PfPw;
+    private javax.swing.JTextField TfUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
