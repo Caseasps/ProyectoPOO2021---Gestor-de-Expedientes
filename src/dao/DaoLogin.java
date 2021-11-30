@@ -31,17 +31,21 @@ public class DaoLogin {
         }
     }
     
-    String obtenerCredenciales(String user){
+    public Boolean verificarCredenciales(String user, String pw){
         ResultSet rs = null;
-        String PW = null;
+        Boolean acceso = false;
+        String pwBD = null;
        
         try{
             verCredenciales.setString(1, user);
             rs = verCredenciales.executeQuery();
             
             while (rs.next()){
-                PW = rs.getString("pw");
+                pwBD = rs.getString("pw");
             }
+            if (pw.equals(pwBD)){
+                return true;
+            }            
             
         }catch(SQLException ex){
             ex.printStackTrace();
@@ -52,7 +56,7 @@ public class DaoLogin {
                 conexion.close(conn);
             }
         }
-        return PW;
+        return acceso;
     }
     
 }

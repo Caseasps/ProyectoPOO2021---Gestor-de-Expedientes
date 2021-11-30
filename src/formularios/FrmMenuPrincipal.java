@@ -47,6 +47,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestor de Expedientes");
+        setResizable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -57,7 +58,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Opciones");
+        jButton1.setText("Ajustes");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -79,7 +80,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
                 .addComponent(BtnNuevoExpediente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap())
+                .addGap(15, 15, 15))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
