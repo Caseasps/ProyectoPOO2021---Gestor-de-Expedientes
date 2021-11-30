@@ -32,28 +32,30 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         LblApellido1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        LblDireccion = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         LblEdad = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         LblEscolaridad = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         LblFechaNac = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        LblGrupoEtnico = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         LblNombreMadre = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         LblNombrePadre = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        LblOficio = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         LblSexo = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        LblId = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        LblGrupoEtnico = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        LblOficio = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        LblDireccion = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         LblAlimentacion = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        LblConsumo = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         LblHorasActFisica = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -61,19 +63,33 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         LblInmunizacion = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        LblCirugias = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        LblEnfInfectoCont = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        LblHospitalizaciones = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        LblEnfCronicas = new javax.swing.JLabel();
-        LblEnfContag = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        LblEnfHereditaria = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        TpConsumo = new javax.swing.JTextPane();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        TpCirugias = new javax.swing.JTextPane();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        TpHospitalizaciones = new javax.swing.JTextPane();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        TpEnfCronicas = new javax.swing.JTextPane();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        TpEnfContag = new javax.swing.JTextPane();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        TpEnfHereditaria = new javax.swing.JTextPane();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        TpEnfInfectoCont = new javax.swing.JTextPane();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Expediente");
+        setResizable(false);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Datos Generales", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
 
         LblNombre1.setText("Nombre");
 
@@ -82,10 +98,6 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
         jLabel2.setText("Apellido:");
 
         LblApellido1.setText("Apellido");
-
-        jLabel3.setText("Direccion:");
-
-        LblDireccion.setText("Direccion");
 
         jLabel4.setText("Edad:");
 
@@ -99,10 +111,6 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
 
         LblFechaNac.setText("Fecha de Nacimiento");
 
-        jLabel7.setText("Grupo Etnico:");
-
-        LblGrupoEtnico.setText("Grupo Etnico");
-
         jLabel8.setText("Nombre de Madre:");
 
         LblNombreMadre.setText("Nombre de Madre");
@@ -111,57 +119,25 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
 
         LblNombrePadre.setText("Nombre de Padre");
 
-        jLabel10.setText("Oficio:");
-
-        LblOficio.setText("Oficio");
-
         jLabel11.setText("Sexo:");
 
         LblSexo.setText("Sexo");
 
-        jLabel12.setText("Alimentación:");
+        jLabel23.setText("ID:");
 
-        LblAlimentacion.setText("Alimentacion");
+        LblId.setText("id");
 
-        jLabel13.setText("Consumo:");
+        jLabel7.setText("Grupo Etnico:");
 
-        LblConsumo.setText("Consumo");
+        LblGrupoEtnico.setText("Grupo Etnico");
 
-        jLabel14.setText("Horas de actividad física:");
+        jLabel10.setText("Oficio:");
 
-        LblHorasActFisica.setText("Horas de actividad física");
+        LblOficio.setText("Oficio");
 
-        jLabel15.setText("Horas Laborales: ");
+        jLabel3.setText("Direccion:");
 
-        LblHorasLaborales.setText("Horas Laborales ");
-
-        jLabel16.setText("Inmunización: ");
-
-        LblInmunizacion.setText("Inmunizacion");
-
-        jLabel17.setText("Cirujías:");
-
-        LblCirugias.setText("Cirujías");
-
-        jLabel18.setText("Enfermedades infecto contagiosas: ");
-
-        LblEnfInfectoCont.setText("Enfermedades infecto contagiosas ");
-
-        jLabel19.setText("Hospitalizaciones:");
-
-        LblHospitalizaciones.setText("Hospitalizaciones");
-
-        jLabel20.setText("Enfermedades contagiosas:");
-
-        jLabel21.setText("Enfermedades Cronicas:");
-
-        LblEnfCronicas.setText("Enfermedades Cronicas");
-
-        LblEnfContag.setText("Enfermedades contagiosas");
-
-        jLabel22.setText("Enfermedad Hereditaria:");
-
-        LblEnfHereditaria.setText("Enfermedad Hereditaria");
+        LblDireccion.setText("Direccion");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -171,178 +147,274 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
-                        .addGap(74, 74, 74)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LblNombre1)
-                            .addComponent(LblApellido1)
-                            .addComponent(LblEdad)
-                            .addComponent(LblDireccion)))
+                        .addComponent(jLabel23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(LblId))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel8))
-                        .addGap(18, 18, 18)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel1)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel11))
+                                .addGap(74, 74, 74)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(LblApellido1)
+                                        .addComponent(LblNombre1))
+                                    .addComponent(LblEdad)))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LblGrupoEtnico)
+                                    .addComponent(LblSexo)
+                                    .addComponent(LblFechaNac))))
+                        .addGap(36, 36, 36)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LblNombreMadre)
-                            .addComponent(LblEscolaridad)
-                            .addComponent(LblGrupoEtnico)
-                            .addComponent(LblFechaNac)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11))
-                        .addGap(34, 34, 34)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LblSexo)
-                            .addComponent(LblNombrePadre)
-                            .addComponent(LblOficio))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18)
-                    .addComponent(jLabel21)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel12)
-                    .addComponent(jLabel19)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel22))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LblEnfHereditaria)
-                    .addComponent(LblEnfContag)
-                    .addComponent(LblHospitalizaciones)
-                    .addComponent(LblAlimentacion)
-                    .addComponent(LblConsumo)
-                    .addComponent(LblHorasActFisica)
-                    .addComponent(LblHorasLaborales)
-                    .addComponent(LblInmunizacion)
-                    .addComponent(LblCirugias)
-                    .addComponent(LblEnfCronicas)
-                    .addComponent(LblEnfInfectoCont))
-                .addContainerGap())
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(LblNombreMadre))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel3))
+                                .addGap(16, 16, 16)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LblEscolaridad)
+                                    .addComponent(LblNombrePadre)
+                                    .addComponent(LblOficio)
+                                    .addComponent(LblDireccion))))))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(LblAlimentacion))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel13)
-                            .addComponent(LblConsumo))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel14)
-                            .addComponent(LblHorasActFisica))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(14, 14, 14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(LblId))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(LblNombre1)
+                    .addComponent(jLabel8)
+                    .addComponent(LblNombreMadre))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(LblApellido1)
+                    .addComponent(jLabel9)
+                    .addComponent(LblNombrePadre))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(LblEdad)
+                    .addComponent(jLabel5)
+                    .addComponent(LblEscolaridad))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(LblSexo)
+                    .addComponent(jLabel10)
+                    .addComponent(LblOficio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(LblFechaNac)
+                    .addComponent(jLabel3)
+                    .addComponent(LblDireccion))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(LblGrupoEtnico))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Antecedentes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
+
+        jLabel12.setText("Alimentación:");
+
+        LblAlimentacion.setText("Alimentacion");
+
+        jLabel13.setText("Consumo:");
+
+        jLabel14.setText("Horas de actividad física:");
+
+        LblHorasActFisica.setText("Horas");
+
+        jLabel15.setText("Horas Laborales: ");
+
+        LblHorasLaborales.setText("Horas ");
+
+        jLabel16.setText("Inmunización: ");
+
+        LblInmunizacion.setText("Inmunizacion");
+
+        jLabel17.setText("Cirugías:");
+
+        jLabel21.setText("Enfermedades Cronicas:");
+
+        jLabel19.setText("Hospitalizaciones:");
+
+        jLabel20.setText("Enfermedades contagiosas:");
+
+        jLabel22.setText("Enfermedad Hereditaria:");
+
+        jLabel18.setText("Enfermedades infecto contagiosas: ");
+
+        TpConsumo.setEditable(false);
+        jScrollPane6.setViewportView(TpConsumo);
+
+        TpCirugias.setEditable(false);
+        jScrollPane7.setViewportView(TpCirugias);
+
+        TpHospitalizaciones.setEditable(false);
+        jScrollPane8.setViewportView(TpHospitalizaciones);
+
+        TpEnfCronicas.setEditable(false);
+        jScrollPane9.setViewportView(TpEnfCronicas);
+
+        TpEnfContag.setEditable(false);
+        jScrollPane10.setViewportView(TpEnfContag);
+
+        TpEnfHereditaria.setEditable(false);
+        jScrollPane11.setViewportView(TpEnfHereditaria);
+
+        TpEnfInfectoCont.setEditable(false);
+        jScrollPane12.setViewportView(TpEnfInfectoCont);
+
+        jLabel24.setText("Hora(s)");
+
+        jLabel25.setText("Hora(s)");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane11)
+                    .addComponent(jScrollPane9)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(LblHorasActFisica)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel24))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel16)
                             .addComponent(jLabel15)
-                            .addComponent(LblHorasLaborales))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel12))
+                        .addGap(53, 53, 53)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(LblAlimentacion)
+                                .addComponent(LblInmunizacion))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(LblHorasLaborales)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel25))))
+                    .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel21)
+                    .addComponent(jScrollPane7))
+                .addGap(39, 39, 39)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane6)
+                    .addComponent(jScrollPane8)
+                    .addComponent(jScrollPane10)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel20))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane12))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel14)
+                    .addComponent(LblHorasActFisica)
+                    .addComponent(jLabel13)
+                    .addComponent(jLabel24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(LblHorasLaborales)
+                            .addComponent(jLabel25))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16)
                             .addComponent(LblInmunizacion))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel17)
-                            .addComponent(LblCirugias))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel21)
-                            .addComponent(LblEnfCronicas))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel18)
-                            .addComponent(LblEnfInfectoCont))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel19)
-                            .addComponent(LblHospitalizaciones))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel20)
-                            .addComponent(LblEnfContag, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel22)
-                            .addComponent(LblEnfHereditaria)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LblNombre1)
-                            .addComponent(jLabel1))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(LblApellido1))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(LblDireccion)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(LblEdad))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(LblEscolaridad))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(LblFechaNac))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(LblGrupoEtnico))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(LblNombreMadre))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel9)
-                            .addComponent(LblNombrePadre))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(LblOficio))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(LblSexo))))
-                .addContainerGap(32, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LblAlimentacion)
+                            .addComponent(jLabel12))
+                        .addGap(6, 6, 6))
+                    .addComponent(jScrollPane6))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(jLabel19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+                    .addComponent(jScrollPane7))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel21)
+                    .addComponent(jLabel20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                    .addComponent(jScrollPane10))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel22)
+                    .addComponent(jLabel18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                    .addComponent(jScrollPane12))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -386,6 +458,7 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
     public void MostrarExpediente (String ID){
         String[] datos = new String[23];
         datos = dmg.buscarPaciente(ID);
+        LblId.setText(datos[0]);
         LblNombre1.setText(datos[1]);
         LblApellido1.setText(datos[2]);
         LblDireccion.setText(datos[3]);
@@ -398,40 +471,41 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
         LblOficio.setText(datos[10]);
         LblSexo.setText(datos[11]);
         LblAlimentacion.setText(datos[12]);
-        LblConsumo.setText(datos[13]);
+        TpConsumo.setText(datos[13]);
         LblHorasActFisica.setText(datos[14]);
         LblHorasLaborales.setText(datos[15]);
         LblInmunizacion.setText(datos[16]);
-        LblCirugias.setText(datos[17]);
-        LblEnfCronicas.setText(datos[18]);
-        LblEnfInfectoCont.setText(datos[19]);
-        LblHospitalizaciones.setText(datos[20]);
-        LblEnfContag.setText(datos[21]);
-        LblEnfHereditaria.setText(datos[22]);
+        TpCirugias.setText(datos[17]);
+        TpEnfCronicas.setText(datos[18]);
+        TpEnfInfectoCont.setText(datos[19]);
+        TpHospitalizaciones.setText(datos[20]);
+        TpEnfContag.setText(datos[21]);
+        TpEnfHereditaria.setText(datos[22]);
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LblAlimentacion;
     private javax.swing.JLabel LblApellido1;
-    private javax.swing.JLabel LblCirugias;
-    private javax.swing.JLabel LblConsumo;
     private javax.swing.JLabel LblDireccion;
     private javax.swing.JLabel LblEdad;
-    private javax.swing.JLabel LblEnfContag;
-    private javax.swing.JLabel LblEnfCronicas;
-    private javax.swing.JLabel LblEnfHereditaria;
-    private javax.swing.JLabel LblEnfInfectoCont;
     private javax.swing.JLabel LblEscolaridad;
     private javax.swing.JLabel LblFechaNac;
     private javax.swing.JLabel LblGrupoEtnico;
     private javax.swing.JLabel LblHorasActFisica;
     private javax.swing.JLabel LblHorasLaborales;
-    private javax.swing.JLabel LblHospitalizaciones;
+    private javax.swing.JLabel LblId;
     private javax.swing.JLabel LblInmunizacion;
     private javax.swing.JLabel LblNombre1;
     private javax.swing.JLabel LblNombreMadre;
     private javax.swing.JLabel LblNombrePadre;
     private javax.swing.JLabel LblOficio;
     private javax.swing.JLabel LblSexo;
+    private javax.swing.JTextPane TpCirugias;
+    private javax.swing.JTextPane TpConsumo;
+    private javax.swing.JTextPane TpEnfContag;
+    private javax.swing.JTextPane TpEnfCronicas;
+    private javax.swing.JTextPane TpEnfHereditaria;
+    private javax.swing.JTextPane TpEnfInfectoCont;
+    private javax.swing.JTextPane TpHospitalizaciones;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -447,6 +521,9 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -455,5 +532,13 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     // End of variables declaration//GEN-END:variables
 }
