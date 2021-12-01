@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class FrmMostrarExpediente extends javax.swing.JFrame {
     private DaoMedicoGestor dmg = new DaoMedicoGestor();
+    private FrmAniadirExpediente frmEdit = new FrmAniadirExpediente();
     /**
      * Creates new form FrmMostrarExpediente
      */
@@ -488,7 +489,29 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
     }
     
     private void BtnEditarExpedienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEditarExpedienteActionPerformed
-        // TODO add your handling code here:
+        frmEdit.IfNuevo(false);
+        
+        boolean inmunizacion;
+        if (CbInmunizacion.isSelected()){
+            inmunizacion = true;
+        }else{
+            inmunizacion = false;
+        }
+        
+        frmEdit.EditInfo(
+                LblApellido1.getText(), LblId.getText(), LblNombre1.getText(),
+                LblDireccion.getText(),Integer.parseInt(LblEdad.getText()),
+                LblEscolaridad.getText(), LblFechaNac.getText(), 
+                LblGrupoEtnico.getText(), LblNombreMadre.getText(),
+                LblNombrePadre.getText(), LblOficio.getText(), LblSexo.getText(),
+                LblAlimentacion.getText(), TpConsumo.getText(),
+                Integer.parseInt(LblHorasActFisica.getText()),
+                Integer.parseInt(LblHorasLaborales.getText()), inmunizacion,
+                TpCirugias.getText(), TpEnfCronicas.getText(),
+                TpEnfInfectoCont.getText(), TpHospitalizaciones.getText(),
+                TpEnfContag.getText(), TpEnfHereditaria.getText());
+        this.dispose();
+        frmEdit.setVisible(true);
     }//GEN-LAST:event_BtnEditarExpedienteActionPerformed
 
     private void BtnEliminarExpedienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarExpedienteActionPerformed
