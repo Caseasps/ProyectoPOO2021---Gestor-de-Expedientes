@@ -5,12 +5,15 @@
  */
 package formularios;
 
+import dao.DaoMedicoSettings;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author benja
  */
 public class FrmAjustesDatosMed extends javax.swing.JFrame {
-
+    private DaoMedicoSettings d = new DaoMedicoSettings();
     /**
      * Creates new form ajusteDatoPersonal
      */
@@ -45,11 +48,16 @@ public class FrmAjustesDatosMed extends javax.swing.JFrame {
 
         BtnCancelar.setFont(BtnCancelar.getFont());
         BtnCancelar.setText("Cancelar");
+        BtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCancelarActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel1.setFont(jLabel1.getFont().deriveFont(jLabel1.getFont().getSize()+2f));
         jLabel1.setText("Nombre:");
 
-        jLabel2.setFont(jLabel2.getFont().deriveFont((float)14));
+        jLabel2.setFont(jLabel2.getFont().deriveFont(jLabel2.getFont().getSize()+2f));
         jLabel2.setText("Apellido:");
 
         jLabel3.setFont(jLabel3.getFont().deriveFont(jLabel3.getFont().getSize()+2f));
@@ -57,6 +65,11 @@ public class FrmAjustesDatosMed extends javax.swing.JFrame {
 
         BtnGuardar.setFont(BtnGuardar.getFont());
         BtnGuardar.setText("Guardar");
+        BtnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnGuardarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -122,6 +135,19 @@ public class FrmAjustesDatosMed extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
+        d.editarDatosMedico(this.TfNombre.getText(), 
+                this.TfApellido.getText(), this.TfEspecialidad.getText());
+        String msg = d.actualizarDataBD();
+        JOptionPane.showMessageDialog(this, msg, "Guardar Datos", JOptionPane.INFORMATION_MESSAGE);
+        this.dispose();
+    }//GEN-LAST:event_BtnGuardarActionPerformed
+
+    private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_BtnCancelarActionPerformed
 
     /**
      * @param args the command line arguments

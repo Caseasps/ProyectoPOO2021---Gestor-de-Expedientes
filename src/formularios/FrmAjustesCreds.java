@@ -6,7 +6,7 @@
 package formularios;
 
 import dao.DaoMedicoSettings;
-import modelos.Medico;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -128,7 +128,8 @@ public class FrmAjustesCreds extends javax.swing.JFrame {
         
         d.editarCredMedico(this.TfNuevUsuario.getText(), 
                 this.TfContraseña.getText());
-        d.actualizarDataBD();
+        String msg = d.actualizarDataBD();
+        JOptionPane.showMessageDialog(this, msg, "Guardar Datos", JOptionPane.INFORMATION_MESSAGE);
         this.dispose();
     }//GEN-LAST:event_BtnGuardarActionPerformed
 
