@@ -236,8 +236,8 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     private void ActualizarCredencialesFrm(){
         String[] data = new String[3];
         data = dmg.mostrarRegistroMedico();
-        this.LblMedicoNombreApellido.setText(data[0]+" "+data[2]);
-        this.LblEspecialidad.setText(data[3]);
+        this.LblMedicoNombreApellido.setText(data[0]+" "+data[1]);
+        this.LblEspecialidad.setText(data[2]);
     }
     
     private void BtnNuevoExpedienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNuevoExpedienteActionPerformed

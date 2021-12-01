@@ -75,7 +75,7 @@
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="TfNuevUsuario" min="-2" pref="255" max="-2" attributes="0"/>
-                              <Component id="TfContraceña" min="-2" pref="255" max="-2" attributes="0"/>
+                              <Component id="TfContraseña" min="-2" pref="255" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -94,7 +94,7 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel2" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="TfContraceña" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="TfContraseña" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="21" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -155,7 +155,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BtnGuardarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="TfContrace&#xf1;a">
+        <Component class="javax.swing.JTextField" name="TfContrase&#xf1;a">
         </Component>
       </SubComponents>
     </Container>

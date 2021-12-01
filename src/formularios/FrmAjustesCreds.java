@@ -36,7 +36,7 @@ public class FrmAjustesCreds extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         BtnGuardar = new javax.swing.JButton();
-        TfContraceña = new javax.swing.JTextField();
+        TfContraseña = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Gestor de Expedientes - Ajustes");
@@ -83,7 +83,7 @@ public class FrmAjustesCreds extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TfNuevUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TfContraceña, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(TfContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -96,7 +96,7 @@ public class FrmAjustesCreds extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TfContraceña, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TfContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnCancelar)
@@ -126,10 +126,9 @@ public class FrmAjustesCreds extends javax.swing.JFrame {
 
     private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
         
-        Medico m = new Medico();
         d.editarCredMedico(this.TfNuevUsuario.getText(), 
-                this.TfContraceña.getText(), m);
-        d.actualizarDataBD(m);
+                this.TfContraseña.getText());
+        d.actualizarDataBD();
         this.dispose();
     }//GEN-LAST:event_BtnGuardarActionPerformed
 
@@ -177,7 +176,7 @@ public class FrmAjustesCreds extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnCancelar;
     private javax.swing.JButton BtnGuardar;
-    private javax.swing.JTextField TfContraceña;
+    private javax.swing.JTextField TfContraseña;
     private javax.swing.JTextField TfNuevUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

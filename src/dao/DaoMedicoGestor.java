@@ -10,7 +10,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -70,8 +69,6 @@ public class DaoMedicoGestor{
         listaDataPaciente = this.listarRegistrosData();
         listaAntPaciente = this.listarRegistrosAnt();
         mostrarDatosMedico = this.mostrarRegistroMedico();
-        Medico m = new Medico();
-        this.listarRegistrosMedico(m);
     }
     
     public ArrayList<DataPaciente> getListaDataPaciente(){
@@ -349,30 +346,8 @@ public class DaoMedicoGestor{
         return listado;
     }
     
-    public void listarRegistrosMedico(Medico m){
-
-        ResultSet rs = null;
-        try{
-            rs = verPacientes.executeQuery();
-            m.setApellido(rs.getString("apellido"));
-            m.setEspecialidad(rs.getString("especialidad"));
-            m.setNombre(rs.getString("nombre"));
-            m.setUsuario(rs.getString("usuario"));
-            m.setPw(rs.getString("pw"));
-
-        }catch(SQLException ex){
-            ex.printStackTrace();
-        }finally{ 
-            try{
-                rs.close();
-            }catch(SQLException ex){
-                conexion.close(conn);
-            }
-        }
-    }
-    
     public String[] mostrarRegistroMedico(){
-        String[] datos = new String[3];
+        String[] datos = new String[5];
         ResultSet rs = null;
         try{
             rs = verDataMedico.executeQuery();
@@ -380,7 +355,10 @@ public class DaoMedicoGestor{
                 datos[0] = rs.getString("nombre");
                 datos[1] = rs.getString("apellido");
                 datos[2] = rs.getString("especialidad");
+                datos[3] = rs.getString("usuario");
+                datos[4] = rs.getString("pw");
             }
+            
         }catch(SQLException ex){
             ex.printStackTrace();
         }finally{ 

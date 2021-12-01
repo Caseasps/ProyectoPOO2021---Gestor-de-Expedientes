@@ -7,7 +7,9 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -22,6 +24,8 @@ public class DaoMedicoSettings {
     private Connection conn ;
     private final Conexion conexion = new Conexion();
     private PreparedStatement editarDatosyCreds;
+    private PreparedStatement verDataMedico;
+    private ArrayList<Medico> listaMedico = new ArrayList();
     
     public DaoMedicoSettings() {
         try {
@@ -29,19 +33,27 @@ public class DaoMedicoSettings {
             editarDatosyCreds = conn.prepareStatement("Update MedicoLogin "
                     + "set nombre = ?, apellido = ?, especialidad = ?, "
                     + "usuario = ?, pw = ? "
-                    + "where id = 1"); 
-
+                    + "where id = 1");
+            
+            verDataMedico = conn.prepareStatement("Select * from MedicoLogin");
         } catch (SQLException ex) {
             Logger.getLogger(DaoMedicoSettings.class.getName()).log(Level.SEVERE, null, ex);
         }
+        listaMedico = this.listarRegistrosMedico();
     }
     
-    public int editarDatosMedico(String nombre, String apellido, String especialidad, Medico m){
+    public ArrayList<Medico> getListaMedico(){
+        return listaMedico;
+    }
+    
+    public int editarDatosMedico(String nombre, String apellido, String especialidad){
         int b = 0;
         try{
-            m.setNombre(nombre);
-            m.setApellido(apellido);
-            m.setEspecialidad(especialidad);
+            for(Medico m : listaMedico){
+                m.setNombre(nombre);
+                m.setApellido(apellido);
+                m.setEspecialidad(especialidad);
+            }
             return 1;
         }catch(Exception ex){
             System.out.println(ex.getMessage());
@@ -49,16 +61,46 @@ public class DaoMedicoSettings {
         return b;
     }
     
-    public int editarCredMedico(String usuario, String pw, Medico m){
+    public int editarCredMedico(String usuario, String pw){
         int b = 0;
         try{
-            m.setUsuario(usuario);
-            m.setPw(pw);
+            for(Medico m : listaMedico){
+                m.setUsuario(usuario);
+                m.setPw(pw);
+            }
             return 1;
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
         return b;
+    }
+    
+    public ArrayList<Medico> listarRegistrosMedico(){
+        ArrayList<Medico> listado = null;
+        ResultSet rs = null;
+        try{
+            rs = verDataMedico.executeQuery();
+            listado = new ArrayList();
+            while(rs.next()){
+                listado.add(new Medico(
+                        rs.getString("nombre"),
+                        rs.getString("apellido"),
+                        rs.getString("especialidad"),
+                        rs.getString("usuario"),
+                        rs.getString("pw")
+                ));
+            
+            }
+        }catch(SQLException ex){
+            ex.printStackTrace();
+        }finally{ 
+            try{
+                rs.close();
+            }catch(SQLException ex){
+                conexion.close(conn);
+            }
+        }
+        return listado;
     }
     
     public int modificarDatosMBD(Medico m){
@@ -79,22 +121,21 @@ public class DaoMedicoSettings {
                 
     }
     
-    public String actualizarDataBD(Medico m){
+    public String actualizarDataBD(){
 
         String msn ="Datos actualizados exitosamente";
         String msnError = "Error. ";
         
-        if (this.modificarDatosMBD(m) != 0){
-            return msn;
-        }else{
+        for(Medico m : listaMedico){
+            if (this.modificarDatosMBD(m) != 0){
+                    return msn;
+            }else{
             msnError += "Error al modifcar datos";
+            }
+            if(!msnError.equals("Error. ")){
+                msn += "\n" + msnError;
+            }
         }
-
-        if(!msnError.equals("Error. ")){
-            msn += "\n" + msnError;
-        }
-        
         return msn;
     }
-
 }
