@@ -5,6 +5,7 @@
 package formularios;
 
 import dao.DaoMedicoGestor;
+import javax.swing.JOptionPane;
 /**
  *
  * @author
@@ -61,7 +62,6 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         LblHorasLaborales = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        LblInmunizacion = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -84,10 +84,12 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
         TpEnfInfectoCont = new javax.swing.JTextPane();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
+        CbInmunizacion = new javax.swing.JCheckBox();
+        BtnEliminarExpediente = new javax.swing.JButton();
+        BtnEditarExpediente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Expediente");
-        setPreferredSize(new java.awt.Dimension(560, 665));
         setResizable(false);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Datos Generales", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 14))); // NOI18N
@@ -102,7 +104,7 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
 
         jLabel4.setText("Edad:");
 
-        LblEdad.setText("Edad");
+        LblEdad.setText("XX");
 
         jLabel5.setText("Escolaridad:");
 
@@ -110,27 +112,27 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
 
         jLabel6.setText("Fecha de Nacimiento:");
 
-        LblFechaNac.setText("Fecha de Nacimiento");
+        LblFechaNac.setText("XX/XX/XXXX");
 
         jLabel8.setText("Nombre de Madre:");
 
-        LblNombreMadre.setText("Nombre de Madre");
+        LblNombreMadre.setText("NombreMadre");
 
         jLabel9.setText("Nombre de Padre:");
 
-        LblNombrePadre.setText("Nombre de Padre");
+        LblNombrePadre.setText("NombrePadre");
 
         jLabel11.setText("Sexo:");
 
-        LblSexo.setText("Sexo");
+        LblSexo.setText("X");
 
         jLabel23.setText("ID:");
 
-        LblId.setText("id");
+        LblId.setText("XXXXXXXXX");
 
         jLabel7.setText("Grupo Etnico:");
 
-        LblGrupoEtnico.setText("Grupo Etnico");
+        LblGrupoEtnico.setText("Grupo");
 
         jLabel10.setText("Oficio:");
 
@@ -175,7 +177,7 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
                                     .addComponent(LblGrupoEtnico)
                                     .addComponent(LblSexo)
                                     .addComponent(LblFechaNac))))
-                        .addGap(36, 36, 36)
+                        .addGap(74, 74, 74)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
@@ -193,7 +195,7 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
                                     .addComponent(LblNombrePadre)
                                     .addComponent(LblOficio)
                                     .addComponent(LblDireccion))))))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,7 +246,7 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
 
         jLabel12.setText("Alimentación:");
 
-        LblAlimentacion.setText("Alimentacion");
+        LblAlimentacion.setText("alim");
 
         jLabel13.setText("Consumo:");
 
@@ -257,8 +259,6 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
         LblHorasLaborales.setText("Horas ");
 
         jLabel16.setText("Inmunización: ");
-
-        LblInmunizacion.setText("Inmunizacion");
 
         jLabel17.setText("Cirugías:");
 
@@ -297,40 +297,45 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
 
         jLabel25.setText("Hora(s)");
 
+        CbInmunizacion.setEnabled(false);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane11)
-                    .addComponent(jScrollPane9)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(LblHorasActFisica)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel24))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel12))
-                        .addGap(53, 53, 53)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(LblAlimentacion)
-                                .addComponent(LblInmunizacion))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(LblHorasLaborales)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel25))))
-                    .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17)
                     .addComponent(jLabel21)
-                    .addComponent(jScrollPane7))
-                .addGap(39, 39, 39)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel14)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(LblHorasActFisica))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel16)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel12))
+                                .addGap(53, 53, 53)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LblHorasLaborales)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addComponent(LblAlimentacion))
+                                    .addComponent(CbInmunizacion))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel25)
+                            .addComponent(jLabel24)))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jScrollPane11)
+                        .addComponent(jScrollPane9)
+                        .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                        .addComponent(jScrollPane7)))
+                .addGap(35, 35, 35)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane6)
                     .addComponent(jScrollPane8)
@@ -341,7 +346,7 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
                             .addComponent(jLabel19)
                             .addComponent(jLabel18)
                             .addComponent(jLabel20))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(0, 69, Short.MAX_VALUE))
                     .addComponent(jScrollPane12))
                 .addContainerGap())
         );
@@ -364,7 +369,7 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel16)
-                            .addComponent(LblInmunizacion))
+                            .addComponent(CbInmunizacion))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LblAlimentacion)
@@ -398,16 +403,38 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        BtnEliminarExpediente.setText("Eliminar");
+        BtnEliminarExpediente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEliminarExpedienteActionPerformed(evt);
+            }
+        });
+
+        BtnEditarExpediente.setText("Editar");
+        BtnEditarExpediente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnEditarExpedienteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(BtnEditarExpediente)
+                        .addGap(18, 18, 18)
+                        .addComponent(BtnEliminarExpediente)
+                        .addGap(27, 27, 27))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 8, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -416,11 +443,72 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnEditarExpediente)
+                    .addComponent(BtnEliminarExpediente))
+                .addGap(0, 15, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    public Boolean MostrarExpediente (String ID){
+        String[] datos = new String[23];
+        datos = dmg.buscarPaciente(ID);
+        LblId.setText(datos[0]);
+        LblNombre1.setText(datos[1]);
+        LblApellido1.setText(datos[2]);
+        LblDireccion.setText(datos[3]);
+        LblEdad.setText(datos[4]);
+        LblEscolaridad.setText(datos[5]);
+        LblFechaNac.setText(datos[6]);
+        LblGrupoEtnico.setText(datos[7]);
+        LblNombreMadre.setText(datos[8]);
+        LblNombrePadre.setText(datos[9]);
+        LblOficio.setText(datos[10]);
+        LblSexo.setText(datos[11]);
+        LblAlimentacion.setText(datos[12]);
+        TpConsumo.setText(datos[13]);
+        LblHorasActFisica.setText(datos[14]);
+        LblHorasLaborales.setText(datos[15]);
+        if (datos[16].equalsIgnoreCase("true"))
+            CbInmunizacion.setSelected(true);
+        TpCirugias.setText(datos[17]);
+        TpEnfCronicas.setText(datos[18]);
+        TpEnfInfectoCont.setText(datos[19]);
+        TpHospitalizaciones.setText(datos[20]);
+        TpEnfContag.setText(datos[21]);
+        TpEnfHereditaria.setText(datos[22]);
+        
+        if (datos[0] == null)
+            return false;
+        
+        return true;
+    }
+    
+    private void BtnEditarExpedienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEditarExpedienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnEditarExpedienteActionPerformed
+
+    private void BtnEliminarExpedienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarExpedienteActionPerformed
+        int eliminacion = 0;
+        
+        eliminacion = dmg.eliminarPaciente(this.LblId.getText());
+        
+         if (eliminacion == 1){
+            this.dispose();
+            JOptionPane.showMessageDialog(this, "Expediente Eliminado",
+                    "Expediente", JOptionPane.INFORMATION_MESSAGE);
+            String msg = dmg.actualizarBD();
+            JOptionPane.showMessageDialog(this, msg, "Eliminar Expediente", 
+                    JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(this, "Error al eliminar Expediente",
+                    "Expediente", JOptionPane.ERROR_MESSAGE);
+        }
+        this.dispose();
+    }//GEN-LAST:event_BtnEliminarExpedienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -457,39 +545,10 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
         });
     }
     
-    public Boolean MostrarExpediente (String ID){
-        String[] datos = new String[23];
-        datos = dmg.buscarPaciente(ID);
-        LblId.setText(datos[0]);
-        LblNombre1.setText(datos[1]);
-        LblApellido1.setText(datos[2]);
-        LblDireccion.setText(datos[3]);
-        LblEdad.setText(datos[4]);
-        LblEscolaridad.setText(datos[5]);
-        LblFechaNac.setText(datos[6]);
-        LblGrupoEtnico.setText(datos[7]);
-        LblNombreMadre.setText(datos[8]);
-        LblNombrePadre.setText(datos[9]);
-        LblOficio.setText(datos[10]);
-        LblSexo.setText(datos[11]);
-        LblAlimentacion.setText(datos[12]);
-        TpConsumo.setText(datos[13]);
-        LblHorasActFisica.setText(datos[14]);
-        LblHorasLaborales.setText(datos[15]);
-        LblInmunizacion.setText(datos[16]);
-        TpCirugias.setText(datos[17]);
-        TpEnfCronicas.setText(datos[18]);
-        TpEnfInfectoCont.setText(datos[19]);
-        TpHospitalizaciones.setText(datos[20]);
-        TpEnfContag.setText(datos[21]);
-        TpEnfHereditaria.setText(datos[22]);
-        
-        if (datos[0] == null)
-            return false;
-        
-        return true;
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnEditarExpediente;
+    private javax.swing.JButton BtnEliminarExpediente;
+    private javax.swing.JCheckBox CbInmunizacion;
     private javax.swing.JLabel LblAlimentacion;
     private javax.swing.JLabel LblApellido1;
     private javax.swing.JLabel LblDireccion;
@@ -500,7 +559,6 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
     private javax.swing.JLabel LblHorasActFisica;
     private javax.swing.JLabel LblHorasLaborales;
     private javax.swing.JLabel LblId;
-    private javax.swing.JLabel LblInmunizacion;
     private javax.swing.JLabel LblNombre1;
     private javax.swing.JLabel LblNombreMadre;
     private javax.swing.JLabel LblNombrePadre;

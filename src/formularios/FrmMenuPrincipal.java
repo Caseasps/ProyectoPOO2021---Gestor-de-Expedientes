@@ -23,7 +23,8 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
      */
     public FrmMenuPrincipal() {
         initComponents();
-        this.ActualizarCredencialesFrm();
+        this.ActualizarDatosFrm();
+        this.TfIdBuscar.requestFocus();
     }
 
     /**
@@ -177,7 +178,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
                         .addComponent(TfIdBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(BtnBuscarExpediente))
-                    .addComponent(BtnActualizarTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BtnActualizarTabla, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -223,11 +224,12 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    private void ActualizarCredencialesFrm(){
-        ArrayList<String> data = new ArrayList();
-        data = dmg.mostrarRegistroMedico();
-        this.LblMedicoNombreApellido.setText(data.get(0)+" "+data.get(1));
-        this.LblEspecialidad.setText(data.get(2));
+    private void ActualizarDatosFrm(){
+        ArrayList<String> creds = new ArrayList();
+        creds = dmg.mostrarRegistroMedico();
+        this.LblMedicoNombreApellido.setText(creds.get(0)+" "+creds.get(1));
+        this.LblEspecialidad.setText(creds.get(2));
+        this.TblPacientesGuardados.setModel(dmg.getTablaPacientes());
     }
     
     private void BtnNuevoExpedienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNuevoExpedienteActionPerformed
@@ -248,7 +250,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnBuscarExpedienteActionPerformed
 
     private void BtnActualizarTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnActualizarTablaActionPerformed
-        this.ActualizarCredencialesFrm();
+        this.ActualizarDatosFrm();
     }//GEN-LAST:event_BtnActualizarTablaActionPerformed
 
     private void TfIdBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfIdBuscarActionPerformed

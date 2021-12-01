@@ -59,7 +59,7 @@ public class DaoMedicoGestor{
                     + "enfContag = ?, enfHereditaria = ? where id = ?");
             
             eliminarPaciente = conn.prepareStatement("Delete "
-                    + "From Paciente where id = ?");
+                    + "From ExpedientePaciente where id = ?");
             
             verDataMedico = conn.prepareStatement("Select * from MedicoLogin");
         } catch (SQLException ex) {
@@ -222,7 +222,7 @@ public class DaoMedicoGestor{
             for(DataPaciente p : listaDataPaciente){
                 if(p.getId().equals(id)){
                     p.setEstado(3);
-                    break;
+                    return 1;
                 }
             }
         }catch(Exception ex){
@@ -373,7 +373,7 @@ public class DaoMedicoGestor{
     public DefaultTableModel getTablaPacientes(){
         DefaultTableModel tbl = new DefaultTableModel();
         try{
-            String titulo[] = {"ID", "", "Nombre(s)", "Apellido(s)"};
+            String titulo[] = {"ID", "Nombre(s)", "Apellido(s)"};
             tbl.setColumnIdentifiers(titulo);
             for(DataPaciente p : listaDataPaciente){
                 Object[] datos = new Object[3];
@@ -382,17 +382,6 @@ public class DaoMedicoGestor{
                 datos[2] = p.getApellidos();
                 tbl.addRow(datos);
             }
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return tbl;
-    }
-    
-    public DefaultTableModel getTablaPacientesHeaders(){
-        DefaultTableModel tbl = new DefaultTableModel();
-        try{
-            String titulo[] = {"ID", "", "Nombre(s)", "Apellido(s)"};
-            tbl.setColumnIdentifiers(titulo);
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
