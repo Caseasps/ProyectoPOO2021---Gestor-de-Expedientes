@@ -44,7 +44,7 @@ public class FrmAjustes extends javax.swing.JFrame {
         TfEspecialidad = new javax.swing.JTextField();
         TfUsuario = new javax.swing.JTextField();
         TfContraseña = new javax.swing.JTextField();
-        BtnGuardar = new javax.swing.JToggleButton();
+        BtnGuardar = new javax.swing.JButton();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -90,30 +90,28 @@ public class FrmAjustes extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(BtnCancelar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BtnGuardar))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(TfNombre)
-                            .addComponent(TfApellido)
-                            .addComponent(TfEspecialidad)
-                            .addComponent(TfUsuario)
-                            .addComponent(TfContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE))
-                        .addGap(0, 21, Short.MAX_VALUE)))
+                .addContainerGap()
+                .addComponent(BtnCancelar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtnGuardar)
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel3)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(TfNombre)
+                    .addComponent(TfApellido)
+                    .addComponent(TfEspecialidad)
+                    .addComponent(TfUsuario)
+                    .addComponent(TfContraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,12 +169,12 @@ public class FrmAjustes extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnCancelarActionPerformed
 
     private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
-        d.editarMedico(this.TfNombre.getText(), 
-                this.TfApellido.getText(), this.TfEspecialidad.getText(), 
-                this.TfUsuario.getText(), this.TfContraseña.getText());
+        d.editarMedico(this.TfNombre.getText(),
+            this.TfApellido.getText(), this.TfEspecialidad.getText(),
+            this.TfUsuario.getText(), this.TfContraseña.getText());
         String msg = d.actualizarDataBD();
         JOptionPane.showMessageDialog(this, msg, "Guardar Datos", JOptionPane.INFORMATION_MESSAGE);
-        this.dispose();                 
+        this.dispose();
     }//GEN-LAST:event_BtnGuardarActionPerformed
 
     /**
@@ -279,7 +277,7 @@ public class FrmAjustes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnCancelar;
-    private javax.swing.JToggleButton BtnGuardar;
+    private javax.swing.JButton BtnGuardar;
     private javax.swing.JTextField TfApellido;
     private javax.swing.JTextField TfContraseña;
     private javax.swing.JTextField TfEspecialidad;

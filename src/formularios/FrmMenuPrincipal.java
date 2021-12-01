@@ -14,7 +14,6 @@ import javax.swing.JOptionPane;
  * @author
  */
 public class FrmMenuPrincipal extends javax.swing.JFrame {
-    private DaoMedicoGestor dmg = new DaoMedicoGestor();
     private FrmAniadirExpediente frmNew = new FrmAniadirExpediente();
     private FrmMostrarExpediente frmE = new FrmMostrarExpediente();
     private FrmAjustes frmA = new FrmAjustes();
@@ -225,6 +224,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     private void ActualizarDatosFrm(){
+        DaoMedicoGestor dmg = new DaoMedicoGestor();
         ArrayList<String> creds = new ArrayList();
         creds = dmg.mostrarRegistroMedico();
         this.LblMedicoNombreApellido.setText(creds.get(0)+" "+creds.get(1));
@@ -252,7 +252,6 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
     private void BtnActualizarTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnActualizarTablaActionPerformed
         this.ActualizarDatosFrm();
-        this.TblPacientesGuardados.setModel(dmg.getTablaPacientes());
     }//GEN-LAST:event_BtnActualizarTablaActionPerformed
 
     private void TfIdBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfIdBuscarActionPerformed

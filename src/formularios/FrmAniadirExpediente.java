@@ -11,7 +11,6 @@ import javax.swing.JOptionPane;
  * @author
  */
 public class FrmAniadirExpediente extends javax.swing.JFrame {
-    private DaoMedicoGestor dmg = new DaoMedicoGestor();
     private boolean esNuevo;
     
     public boolean isEsNuevo() {
@@ -461,7 +460,7 @@ public class FrmAniadirExpediente extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnCancelarActionPerformed
 
     private void BtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnGuardarActionPerformed
-        
+        DaoMedicoGestor dmg = new DaoMedicoGestor();
         if(TfId.getText().equals("")){
             JOptionPane.showMessageDialog(this, "Ingrese la ID del expediente"
                     , "Expediente", JOptionPane.WARNING_MESSAGE);

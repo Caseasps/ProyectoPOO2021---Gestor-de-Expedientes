@@ -11,7 +11,6 @@ import javax.swing.JOptionPane;
  * @author
  */
 public class FrmMostrarExpediente extends javax.swing.JFrame {
-    private DaoMedicoGestor dmg = new DaoMedicoGestor();
     private FrmAniadirExpediente frmEdit = new FrmAniadirExpediente();
     /**
      * Creates new form FrmMostrarExpediente
@@ -368,9 +367,9 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
                             .addComponent(LblHorasLaborales)
                             .addComponent(jLabel25))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel16)
-                            .addComponent(CbInmunizacion))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CbInmunizacion)
+                            .addComponent(jLabel16))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LblAlimentacion)
@@ -455,6 +454,7 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     public Boolean MostrarExpediente (String ID){
+        DaoMedicoGestor dmg = new DaoMedicoGestor();
         String[] datos = new String[23];
         datos = dmg.buscarPaciente(ID);
         LblId.setText(datos[0]);
@@ -515,6 +515,7 @@ public class FrmMostrarExpediente extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnEditarExpedienteActionPerformed
 
     private void BtnEliminarExpedienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnEliminarExpedienteActionPerformed
+        DaoMedicoGestor dmg = new DaoMedicoGestor();
         int eliminacion = 0;
         
         eliminacion = dmg.eliminarPaciente(this.LblId.getText());
