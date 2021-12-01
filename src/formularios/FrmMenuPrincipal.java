@@ -6,6 +6,7 @@
 package formularios;
 
 import dao.DaoMedicoGestor;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -15,7 +16,7 @@ import javax.swing.JOptionPane;
 public class FrmMenuPrincipal extends javax.swing.JFrame {
     private DaoMedicoGestor dmg = new DaoMedicoGestor();
     private FrmMostrarExpediente frmE = new FrmMostrarExpediente();
-    private FrmMenuAjustes frmA = new FrmMenuAjustes();
+    private FrmAjustes frmA = new FrmAjustes();
     /**
      * Creates new form MenuPrincipal
      */
@@ -131,29 +132,17 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
         TblPacientesGuardados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "ID", "Nombres", "Apellidos"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false
-            };
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
-        });
+        ));
+        TblPacientesGuardados.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(TblPacientesGuardados);
-        if (TblPacientesGuardados.getColumnModel().getColumnCount() > 0) {
-            TblPacientesGuardados.getColumnModel().getColumn(0).setResizable(false);
-            TblPacientesGuardados.getColumnModel().getColumn(1).setResizable(false);
-            TblPacientesGuardados.getColumnModel().getColumn(2).setResizable(false);
-        }
 
         TfIdBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -234,10 +223,10 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     
     private void ActualizarCredencialesFrm(){
-        String[] data = new String[3];
+        ArrayList<String> data = new ArrayList();
         data = dmg.mostrarRegistroMedico();
-        this.LblMedicoNombreApellido.setText(data[0]+" "+data[1]);
-        this.LblEspecialidad.setText(data[2]);
+        this.LblMedicoNombreApellido.setText(data.get(0)+" "+data.get(1));
+        this.LblEspecialidad.setText(data.get(2));
     }
     
     private void BtnNuevoExpedienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNuevoExpedienteActionPerformed
@@ -256,7 +245,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BtnBuscarExpedienteActionPerformed
 
     private void BtnActualizarTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnActualizarTablaActionPerformed
-
+        this.ActualizarCredencialesFrm();
     }//GEN-LAST:event_BtnActualizarTablaActionPerformed
 
     private void TfIdBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfIdBuscarActionPerformed

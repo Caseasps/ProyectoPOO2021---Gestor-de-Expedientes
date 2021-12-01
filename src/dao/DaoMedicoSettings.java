@@ -46,25 +46,14 @@ public class DaoMedicoSettings {
         return listaMedico;
     }
     
-    public int editarDatosMedico(String nombre, String apellido, String especialidad){
+    public int editarMedico(String nombre, String apellido, String especialidad,
+            String usuario, String pw){
         int b = 0;
         try{
             for(Medico m : listaMedico){
                 m.setNombre(nombre);
                 m.setApellido(apellido);
                 m.setEspecialidad(especialidad);
-            }
-            return 1;
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return b;
-    }
-    
-    public int editarCredMedico(String usuario, String pw){
-        int b = 0;
-        try{
-            for(Medico m : listaMedico){
                 m.setUsuario(usuario);
                 m.setPw(pw);
             }

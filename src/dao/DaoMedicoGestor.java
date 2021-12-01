@@ -16,7 +16,6 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modelos.Antecedentes;
 import modelos.DataPaciente;
-import modelos.Medico;
 
 /**
  *
@@ -33,7 +32,7 @@ public class DaoMedicoGestor{
     private PreparedStatement verDataMedico;
     private ArrayList<DataPaciente> listaDataPaciente = new ArrayList();
     private ArrayList<Antecedentes> listaAntPaciente = new ArrayList();
-    private String[] mostrarDatosMedico;
+    private ArrayList<String> mostrarDatosMedico;
     
     public DaoMedicoGestor() {
         try {
@@ -79,7 +78,7 @@ public class DaoMedicoGestor{
         return listaAntPaciente;
     }
     
-    public String[] getMostrarDatosMedico(){
+    public ArrayList<String> getMostrarDatosMedico(){
         return mostrarDatosMedico;
     }
     
@@ -346,17 +345,17 @@ public class DaoMedicoGestor{
         return listado;
     }
     
-    public String[] mostrarRegistroMedico(){
-        String[] datos = new String[5];
+    public ArrayList<String> mostrarRegistroMedico(){
+        ArrayList<String> datos = new ArrayList();
         ResultSet rs = null;
         try{
             rs = verDataMedico.executeQuery();
             while(rs.next()){
-                datos[0] = rs.getString("nombre");
-                datos[1] = rs.getString("apellido");
-                datos[2] = rs.getString("especialidad");
-                datos[3] = rs.getString("usuario");
-                datos[4] = rs.getString("pw");
+                datos.add(rs.getString("nombre"));
+                datos.add(rs.getString("apellido"));
+                datos.add(rs.getString("especialidad"));
+                datos.add(rs.getString("usuario"));
+                datos.add(rs.getString("pw"));
             }
             
         }catch(SQLException ex){
