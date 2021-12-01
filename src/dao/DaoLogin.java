@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Clase para el funcionamiento del Login.
  */
 package dao;
 
@@ -15,7 +13,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author 
+ * @author Martin Majewsky & Eleazar Cortez
  */
 public class DaoLogin {
     
@@ -32,6 +30,14 @@ public class DaoLogin {
         }
     }
     
+    /**
+     * Obtiene las credenciales ingresadas y las compara con credenciales 
+     * guardadas en la base de datos.
+     * Devuelve varible boolean para determinar si hay acceso o no al programa
+     * @param user Usuario ingresado
+     * @param pw Contraseña ingresada
+     * @return acceso Booleano determinando acceso a programa
+     */    
     public Boolean verificarCredenciales(String user, String pw){
         ResultSet rs = null;
         Boolean acceso = false;

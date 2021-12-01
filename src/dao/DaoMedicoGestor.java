@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Clase Dao de Medico, encargada de obtener, guardar, editar y 
+ * eliminar Expedientes localmente y en la base de datos.
  */
 package dao;
 
@@ -19,7 +18,7 @@ import modelos.DataPaciente;
 
 /**
  *
- * @author 
+ * @author Martin Majewsky
  */
 public class DaoMedicoGestor{
     
@@ -34,6 +33,7 @@ public class DaoMedicoGestor{
     private ArrayList<Antecedentes> listaAntPaciente = new ArrayList();
     private ArrayList<String> mostrarDatosMedico;
     
+    //Constructor
     public DaoMedicoGestor() {
         try {
             conn = conexion.obtenerConexion();
@@ -83,31 +83,31 @@ public class DaoMedicoGestor{
     }
     
     /**
-     * Agrega un nuevo paciente
-     * @param apellidos
-     * @param id
-     * @param nombres
-     * @param direccion
-     * @param edad
-     * @param escolaridad
-     * @param fechaNac
-     * @param grupoEtnico
-     * @param nombreMadre
-     * @param nombrePadre
-     * @param oficio
-     * @param sexo
-     * @param alimentacion
-     * @param consumo
-     * @param horasActFisica
-     * @param horasLaborales
-     * @param inmunizacion
-     * @param cirugias
-     * @param enfCronicas
-     * @param enfInfectoCont
-     * @param hospitalizaciones
-     * @param enfContag
-     * @param enfHereditaria
-     * @return 
+     * Agrega un nuevo expediente
+     * @param apellidos Apellido
+     * @param id Id 
+     * @param nombres Nombre
+     * @param direccion Direccion
+     * @param edad Edad
+     * @param escolaridad Escolaridad
+     * @param fechaNac Fecha de Nacimiento
+     * @param grupoEtnico Grupo Etnico
+     * @param nombreMadre Nombre de la Madre
+     * @param nombrePadre Nombre del Padre
+     * @param oficio Oficio
+     * @param sexo Sexo
+     * @param alimentacion Tipo de Alimentacion
+     * @param consumo Consumo de drogas o farmacos
+     * @param horasActFisica Horas de Actividad fisica diaria
+     * @param horasLaborales Horas laborales diarias
+     * @param inmunizacion Inmunizacion
+     * @param cirugias Cirugias
+     * @param enfCronicas Enfermedades Cronicas
+     * @param enfInfectoCont Enfermedades Infectocontagiosas
+     * @param hospitalizaciones Hospitalizaciones
+     * @param enfContag Enfermedades Contagiosas
+     * @param enfHereditaria Enfermedades Hereditarias
+     * @return Entero para determinar si se guardaron los datos.
      */
     public int agregarPaciente(String apellidos, String id, String nombres, 
             String direccion, int edad, String escolaridad, String fechaNac, 
@@ -136,31 +136,31 @@ public class DaoMedicoGestor{
     }
     
     /**
-     * Edita un paciente ya registrado
-     * @param apellidos
-     * @param id
-     * @param nombres
-     * @param direccion
-     * @param edad
-     * @param escolaridad
-     * @param fechaNac
-     * @param grupoEtnico
-     * @param nombreMadre
-     * @param nombrePadre
-     * @param oficio
-     * @param sexo
-     * @param alimentacion
-     * @param consumo
-     * @param horasActFisica
-     * @param horasLaborales
-     * @param inmunizacion
-     * @param cirugias
-     * @param enfCronicas
-     * @param enfInfectoCont
-     * @param hospitalizaciones
-     * @param enfContag
-     * @param enfHereditaria
-     * @return 
+     * Edita un expediente ya guardado
+     * @param apellidos Apellido
+     * @param id Id 
+     * @param nombres Nombre
+     * @param direccion Direccion
+     * @param edad Edad
+     * @param escolaridad Escolaridad
+     * @param fechaNac Fecha de Nacimiento
+     * @param grupoEtnico Grupo Etnico
+     * @param nombreMadre Nombre de la Madre
+     * @param nombrePadre Nombre del Padre
+     * @param oficio Oficio
+     * @param sexo Sexo
+     * @param alimentacion Tipo de Alimentacion
+     * @param consumo Consumo de drogas o farmacos
+     * @param horasActFisica Horas de Actividad fisica diaria
+     * @param horasLaborales Horas laborales diarias
+     * @param inmunizacion Inmunizacion
+     * @param cirugias Cirugias
+     * @param enfCronicas Enfermedades Cronicas
+     * @param enfInfectoCont Enfermedades Infectocontagiosas
+     * @param hospitalizaciones Hospitalizaciones
+     * @param enfContag Enfermedades Contagiosas
+     * @param enfHereditaria Enfermedades Hereditarias
+     * @return Entero para determinar si se guardaron los datos.
      */
     public int editarPaciente(String apellidos, String id, String nombres, 
             String direccion, int edad, String escolaridad, String fechaNac, 
@@ -212,9 +212,9 @@ public class DaoMedicoGestor{
     }
     
     /**
-     * Elimina un paciente
-     * @param id
-     * @return 
+     * Elimina un expediente
+     * @param id Id
+     * @return Entero para determinar si se eliminaron los datos.
      */
     public int eliminarPaciente(String id){
         int b = 0;
@@ -232,9 +232,9 @@ public class DaoMedicoGestor{
     }
     
     /**
-     * Busca a un paciente en especifico
-     * @param id
-     * @return 
+     * Busca a un expediente en especifico
+     * @param id Id
+     * @return Datos obtenidos del expediente encontrado 
      */
     public String[] buscarPaciente(String id){
         String[] datosPaciente = new String[23];
@@ -388,6 +388,7 @@ public class DaoMedicoGestor{
         return tbl;
     }
     
+    //Agrega un Registro a la Base de Datos
     public int agregarRegistroBD(DataPaciente p){
         int r = 0;
         try{
@@ -422,7 +423,8 @@ public class DaoMedicoGestor{
         }
         return r;
     }
-
+    
+    //Modifica un Registro a la Base de Datos
     public int modificaRegistroBD(DataPaciente p){
         int r = 0;
         try{
@@ -459,6 +461,7 @@ public class DaoMedicoGestor{
                 
     }
     
+    //Elimina un Registro a la Base de Datos
     public int eliminarRegistroBD(DataPaciente p){
         int r = 0;
         try{
@@ -473,6 +476,7 @@ public class DaoMedicoGestor{
                 
     }
     
+    //Actualiza a la Base de Datos
     public String actualizarBD(){
         String msn ="";
         String msnError = "Errores en:";

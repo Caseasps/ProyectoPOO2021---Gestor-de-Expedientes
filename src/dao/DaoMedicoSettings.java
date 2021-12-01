@@ -1,7 +1,6 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Clase Dao de Medico, encargada de editar datos 
+ * del medico localmente y en la base de datos.
  */
 package dao;
 
@@ -17,7 +16,7 @@ import modelos.Medico;
 
 /**
  *
- * @author
+ * @author Martin Majewsky
  */
 public class DaoMedicoSettings {
     
@@ -27,6 +26,7 @@ public class DaoMedicoSettings {
     private PreparedStatement verDataMedico;
     private ArrayList<Medico> listaMedico = new ArrayList();
     
+    //Constructor
     public DaoMedicoSettings() {
         try {
             conn = conexion.obtenerConexion();
