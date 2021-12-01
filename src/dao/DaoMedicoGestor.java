@@ -44,8 +44,8 @@ public class DaoMedicoGestor{
                     + "escolaridad, fechaNac, grupoEtnico, nombreMadre, "
                     + "nombrePadre, oficio, sexo, alimentacion, consumo, "
                     + "horasActFisica, horasLaborales, inmunizacion, "
-                    + "cirujias, enfCronicas, enfInfectoCont, "
-                    + "hospitalizaciones, enfContag, enfHederitaria) "
+                    + "cirugias, enfCronicas, enfInfectoCont, "
+                    + "hospitalizaciones, enfContag, enfHereditaria) "
                     + "Values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
                     + "?, ?, ?, ?, ?, ?, ?, ?)"); 
             
@@ -54,9 +54,9 @@ public class DaoMedicoGestor{
                     + "escolaridad = ?, fechaNac = ?,  grupoEtnico = ?, "
                     + "nombreMadre = ?, nombrePadre  = ?, oficio = ?, sexo = ?,  "
                     + "alimentacion = ?, consumo = ?, horasActFisica = ?, "
-                    + "horasLaborales = ?, inmunizacion = ?, cirujias = ?, "
+                    + "horasLaborales = ?, inmunizacion = ?, cirugias = ?, "
                     + "enfCronicas = ?, enfInfectoCont = ?, hospitalizaciones = ?, "
-                    + "enfContag = ?, enfHederitaria = ? where id = ?");
+                    + "enfContag = ?, enfHereditaria = ? where id = ?");
             
             eliminarPaciente = conn.prepareStatement("Delete "
                     + "From Paciente where id = ?");
@@ -325,12 +325,12 @@ public class DaoMedicoGestor{
                         rs.getInt("horasActFisica"),
                         rs.getInt("horasLaborales"),
                         rs.getBoolean("inmunizacion"),
-                        rs.getString("cirujias"),
+                        rs.getString("cirugias"),
                         rs.getString("enfCronicas"),
                         rs.getString("enfInfectoCont"),
                         rs.getString("hospitalizaciones"),
                         rs.getString("enfContag"),
-                        rs.getString("enfHederitaria")
+                        rs.getString("enfHereditaria")
                 ));
             }
         }catch(SQLException ex){
