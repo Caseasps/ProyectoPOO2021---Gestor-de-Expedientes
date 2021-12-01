@@ -424,43 +424,35 @@ public class FrmAniadirExpediente extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    public void IfNuevo(boolean opcion){
-        this.setEsNuevo(opcion);
+    public void LimpiarFrm(){
+        this.TfId.setText(null);
+        this.TfNombre.setText(null);
+        this.TfApellido.setText(null);
+        this.TfDireccion.setText(null);
+        this.TfEdad.setText(null);
+        this.TfEscolaridad.setText(null);
+        this.TfFechaNac.setText(null);
+        this.TfGrupoEtnico.setText(null);
+        this.TfNombreMadre.setText(null);
+        this.TfNombrePadre.setText(null);
+        this.TfOficio.setText(null);
+        this.TfSexo.setText(null);
+        this.TfAlimentacion.setText(null);
+        this.TpConsumo.setText(null);
+        this.TfHorasActFisica.setText(null);
+        this.TfHorasLaborales.setText(null);
+        if (this.CbInmunizacion.isSelected())
+            this.CbInmunizacion.setSelected(false);
+        this.TpCirugias.setText(null);
+        this.TpEnfCronicas.setText(null);
+        this.TpEnfInfectoCont.setText(null);
+        this.TpHospitalizaciones.setText(null);
+        this.TpEnfContag.setText(null);
+        this.TpEnfHereditaria.setText(null);
     }
     
-    public void EditInfo(String apellidos, String id, String nombres, 
-            String direccion, int edad, String escolaridad, String fechaNac, 
-            String grupoEtnico, String nombreMadre, String nombrePadre, 
-            String oficio, String sexo, String alimentacion, String consumo, 
-            int horasActFisica, int horasLaborales, boolean inmunizacion, 
-            String cirugias, String enfCronicas, String enfInfectoCont, 
-            String hospitalizaciones, String enfContag, String enfHereditaria){
-        
-        TfId.setText(id);
-        TfId.setEditable(false);
-        TfNombre.setText(nombres);
-        TfApellido.setText(apellidos);
-        TfDireccion.setText(direccion);
-        TfEdad.setText(""+edad);
-        TfEscolaridad.setText(escolaridad);
-        TfFechaNac.setText(fechaNac);
-        TfGrupoEtnico.setText(grupoEtnico);
-        TfNombreMadre.setText(nombreMadre);
-        TfNombrePadre.setText(nombrePadre);
-        TfOficio.setText(oficio);
-        TfSexo.setText(sexo);
-        TfAlimentacion.setText(alimentacion);
-        TpConsumo.setText(consumo);
-        TfHorasActFisica.setText(""+horasActFisica);
-        TfHorasLaborales.setText(""+horasLaborales);
-        if (inmunizacion)
-            CbInmunizacion.setSelected(true);
-        TpCirugias.setText(cirugias);
-        TpEnfCronicas.setText(enfCronicas);
-        TpEnfInfectoCont.setText(enfInfectoCont);
-        TpHospitalizaciones.setText(hospitalizaciones);
-        TpEnfContag.setText(enfContag);
-        TpEnfHereditaria.setText(enfHereditaria);
+    public void IfNuevo(boolean opcion){
+        this.setEsNuevo(opcion);
     }
     
     private void BtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCancelarActionPerformed
@@ -568,7 +560,42 @@ public class FrmAniadirExpediente extends javax.swing.JFrame {
         }
         this.dispose();
     }//GEN-LAST:event_BtnGuardarActionPerformed
-
+    
+    public void EditInfo(String apellidos, String id, String nombres, 
+            String direccion, int edad, String escolaridad, String fechaNac, 
+            String grupoEtnico, String nombreMadre, String nombrePadre, 
+            String oficio, String sexo, String alimentacion, String consumo, 
+            int horasActFisica, int horasLaborales, boolean inmunizacion, 
+            String cirugias, String enfCronicas, String enfInfectoCont, 
+            String hospitalizaciones, String enfContag, String enfHereditaria){
+        
+        TfId.setText(id);
+        TfId.setEditable(false);
+        TfNombre.setText(nombres);
+        TfApellido.setText(apellidos);
+        TfDireccion.setText(direccion);
+        TfEdad.setText(""+edad);
+        TfEscolaridad.setText(escolaridad);
+        TfFechaNac.setText(fechaNac);
+        TfGrupoEtnico.setText(grupoEtnico);
+        TfNombreMadre.setText(nombreMadre);
+        TfNombrePadre.setText(nombrePadre);
+        TfOficio.setText(oficio);
+        TfSexo.setText(sexo);
+        TfAlimentacion.setText(alimentacion);
+        TpConsumo.setText(consumo);
+        TfHorasActFisica.setText(""+horasActFisica);
+        TfHorasLaborales.setText(""+horasLaborales);
+        if (inmunizacion)
+            CbInmunizacion.setSelected(true);
+        TpCirugias.setText(cirugias);
+        TpEnfCronicas.setText(enfCronicas);
+        TpEnfInfectoCont.setText(enfInfectoCont);
+        TpHospitalizaciones.setText(hospitalizaciones);
+        TpEnfContag.setText(enfContag);
+        TpEnfHereditaria.setText(enfHereditaria);
+    }
+    
     /**
      * @param args the command line arguments
      */

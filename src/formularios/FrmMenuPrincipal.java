@@ -235,6 +235,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     private void BtnNuevoExpedienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNuevoExpedienteActionPerformed
         // TODO add your handling code here:
         frmNew.IfNuevo(true);
+        frmNew.LimpiarFrm();
         frmNew.setVisible(true);
     }//GEN-LAST:event_BtnNuevoExpedienteActionPerformed
 
@@ -251,6 +252,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
 
     private void BtnActualizarTablaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnActualizarTablaActionPerformed
         this.ActualizarDatosFrm();
+        this.TblPacientesGuardados.setModel(dmg.getTablaPacientes());
     }//GEN-LAST:event_BtnActualizarTablaActionPerformed
 
     private void TfIdBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TfIdBuscarActionPerformed
