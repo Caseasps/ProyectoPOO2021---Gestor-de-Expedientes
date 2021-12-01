@@ -15,6 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class FrmMenuPrincipal extends javax.swing.JFrame {
     private DaoMedicoGestor dmg = new DaoMedicoGestor();
+    private FrmAniadirExpediente frmNew = new FrmAniadirExpediente();
     private FrmMostrarExpediente frmE = new FrmMostrarExpediente();
     private FrmAjustes frmA = new FrmAjustes();
     /**
@@ -61,7 +62,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        BtnAjustes.setText("Ajustes");
+        BtnAjustes.setText("Ajustes de Perfil");
         BtnAjustes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnAjustesActionPerformed(evt);
@@ -88,7 +89,7 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
                 .addComponent(BtnNuevoExpediente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(BtnAjustes)
-                .addGap(15, 15, 15))
+                .addGap(16, 16, 16))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -231,6 +232,8 @@ public class FrmMenuPrincipal extends javax.swing.JFrame {
     
     private void BtnNuevoExpedienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnNuevoExpedienteActionPerformed
         // TODO add your handling code here:
+        frmNew.IfNuevo(true);
+        frmNew.setVisible(true);
     }//GEN-LAST:event_BtnNuevoExpedienteActionPerformed
 
     private void BtnBuscarExpedienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBuscarExpedienteActionPerformed

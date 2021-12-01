@@ -35,9 +35,9 @@ public class FrmLogin extends javax.swing.JFrame {
         TfUsuario = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        BtnIngresar = new javax.swing.JToggleButton();
         PfPw = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
+        BtnIngresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestor de Expedientes - Login");
@@ -58,14 +58,6 @@ public class FrmLogin extends javax.swing.JFrame {
         jLabel5.setFont(jLabel5.getFont().deriveFont(jLabel5.getFont().getSize()+2f));
         jLabel5.setText("Contraseña:");
 
-        BtnIngresar.setFont(BtnIngresar.getFont());
-        BtnIngresar.setText("Ingresar");
-        BtnIngresar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnIngresarActionPerformed(evt);
-            }
-        });
-
         PfPw.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PfPwActionPerformed(evt);
@@ -74,10 +66,21 @@ public class FrmLogin extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/formularios/img/login.png"))); // NOI18N
 
+        BtnIngresar.setText("Ingresar");
+        BtnIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnIngresarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(168, 168, 168))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -91,14 +94,9 @@ public class FrmLogin extends javax.swing.JFrame {
                         .addComponent(TfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(31, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(BtnIngresar)
-                        .addGap(155, 155, 155))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(168, 168, 168))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BtnIngresar)
+                .addGap(162, 162, 162))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,26 +140,6 @@ public class FrmLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TfUsuarioActionPerformed
 
-    private void BtnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIngresarActionPerformed
-        if(TfUsuario.getText().equals("")){
-            JOptionPane.showMessageDialog(this, "Ingrese su nombre de usuario"
-                    , "Login", JOptionPane.WARNING_MESSAGE);
-            TfUsuario.requestFocus();
-            return ;
-        }
-        if(String.valueOf(PfPw.getPassword()).equals("")){
-            JOptionPane.showMessageDialog(this, "Ingrese una contraseña"
-                    , "Login", JOptionPane.WARNING_MESSAGE);
-            PfPw.requestFocus();
-            return;
-        }
-        if(login.verificarCredenciales(this.TfUsuario.getText(), 
-                String.valueOf(this.PfPw.getPassword()))){
-            frm.setVisible(true);
-            this.dispose();
-        }
-    }//GEN-LAST:event_BtnIngresarActionPerformed
-
     private void PfPwActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PfPwActionPerformed
         if(TfUsuario.getText().equals("")){
             JOptionPane.showMessageDialog(this, "Ingrese su nombre de usuario"
@@ -181,6 +159,26 @@ public class FrmLogin extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_PfPwActionPerformed
+
+    private void BtnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnIngresarActionPerformed
+       if(TfUsuario.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Ingrese su nombre de usuario"
+                    , "Login", JOptionPane.WARNING_MESSAGE);
+            TfUsuario.requestFocus();
+            return ;
+        }
+        if(String.valueOf(PfPw.getPassword()).equals("")){
+            JOptionPane.showMessageDialog(this, "Ingrese una contraseña"
+                    , "Login", JOptionPane.WARNING_MESSAGE);
+            PfPw.requestFocus();
+            return;
+        }
+        if(login.verificarCredenciales(this.TfUsuario.getText(), 
+                String.valueOf(this.PfPw.getPassword()))){
+            frm.setVisible(true);
+            this.dispose();
+        }
+    }//GEN-LAST:event_BtnIngresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,7 +216,7 @@ public class FrmLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton BtnIngresar;
+    private javax.swing.JButton BtnIngresar;
     private javax.swing.JPasswordField PfPw;
     private javax.swing.JTextField TfUsuario;
     private javax.swing.JLabel jLabel1;

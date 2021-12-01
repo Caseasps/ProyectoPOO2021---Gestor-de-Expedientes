@@ -40,23 +40,23 @@ public class DaoMedicoGestor{
             verPacientes = conn.prepareStatement("Select * from ExpedientePaciente");
             
             insertarPaciente = conn.prepareStatement("Insert Into ExpedientePaciente"
-                    + "(id, nombres, apellidos, direccion, edad, "
+                    + "(id, nombre, apellido, direccion, edad, "
                     + "escolaridad, fechaNac, grupoEtnico, nombreMadre, "
                     + "nombrePadre, oficio, sexo, alimentacion, consumo, "
                     + "horasActFisica, horasLaborales, inmunizacion, "
-                    + "cirugias, enfCronicas, enfInfectoCont, "
-                    + "hospitalizaciones, enfContag, enfHereditaria) "
+                    + "cirujias, enfCronicas, enfInfectoCont, "
+                    + "hospitalizaciones, enfContag, enfHederitaria) "
                     + "Values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
                     + "?, ?, ?, ?, ?, ?, ?, ?)"); 
             
             editarPaciente = conn.prepareStatement("Update ExpedientePaciente "
-                    + "set nombres = ?, apellidos = ?, direccion = ?,  edad = ?, "
+                    + "set nombre = ?, apellido = ?, direccion = ?,  edad = ?, "
                     + "escolaridad = ?, fechaNac = ?,  grupoEtnico = ?, "
                     + "nombreMadre = ?, nombrePadre  = ?, oficio = ?, sexo = ?,  "
                     + "alimentacion = ?, consumo = ?, horasActFisica = ?, "
-                    + "horasLaborales = ?, inmunizacion = ?, cirugias = ?, "
+                    + "horasLaborales = ?, inmunizacion = ?, cirujias = ?, "
                     + "enfCronicas = ?, enfInfectoCont = ?, hospitalizaciones = ?, "
-                    + "enfContag = ?, enfHereditaria = ? where id = ?");
+                    + "enfContag = ?, enfHederitaria = ? where id = ?");
             
             eliminarPaciente = conn.prepareStatement("Delete "
                     + "From Paciente where id = ?");
@@ -325,12 +325,12 @@ public class DaoMedicoGestor{
                         rs.getInt("horasActFisica"),
                         rs.getInt("horasLaborales"),
                         rs.getBoolean("inmunizacion"),
-                        rs.getString("cirugias"),
+                        rs.getString("cirujias"),
                         rs.getString("enfCronicas"),
                         rs.getString("enfInfectoCont"),
                         rs.getString("hospitalizaciones"),
                         rs.getString("enfContag"),
-                        rs.getString("enfHereditaria")
+                        rs.getString("enfHederitaria")
                 ));
             }
         }catch(SQLException ex){
